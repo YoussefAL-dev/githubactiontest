@@ -1,0 +1,16 @@
+name: Workflow_For_Test
+
+on: 
+  push:
+    branches: [main]
+
+jobs: 
+
+  first-test:
+    runs-on: ubuntu-latest
+    
+    steps: 
+      - name: "printing welcoming message!"
+        run : echo "Welcome to Github Actions world"
+
+
