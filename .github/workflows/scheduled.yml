@@ -1,9 +1,9 @@
 name: scheduled_work_flow
 
 on: 
- schedule:
-  - cron: "7 7 * * *"
-
+ push: 
+  branches: 
+   - main
 jobs:
  today_tasks: 
   runs-on: ubuntu-latest
@@ -11,3 +11,8 @@ jobs:
   steps: 
   - name: print good morning
     run: echo "Good Morninng champion"
+
+  - name: show current time
+    run: |
+      echo "Current UTC time: $(date -u)"
+      echo "Current local time: $(date)"
