@@ -1,7 +1,17 @@
 name: manual_workflow
 
 on: 
- workflow_dispatch:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: choose Version
+        required: true
+        default: '@v1.0.0'
+        type: choice
+        options:
+          - '@v1.0.0'
+          - '@v1.23.1'
+          - '@v2.0.1'
 
 jobs: 
  manual_test:
