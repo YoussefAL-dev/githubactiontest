@@ -3,7 +3,7 @@ name: manual_workflow
 on: 
   workflow_dispatch:
     inputs:
-      environment:
+      version:
         description: choose Version
         required: true
         default: '@v1.0.0'
@@ -18,5 +18,8 @@ jobs:
   runs-on: ubuntu-latest
 
   steps:
+   - name: choosed Environment
+     run: echo "your environment version is ${{ inputs.version }}"
+  
    - name: test_manual
      run: echo "manula test successed!"
