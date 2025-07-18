@@ -1,0 +1,13 @@
+name: scheduled_work_flow
+
+on: 
+ schedule:
+  - cron: "3 8 * * *"
+
+jobs:
+ today_tasks: 
+  runs-on: ubuntu-latest
+
+  steps: 
+  - name: print good morning
+    run: echo "Good Morninng champion"
