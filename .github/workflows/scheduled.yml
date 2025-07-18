@@ -1,18 +1,21 @@
 name: scheduled_work_flow
 
 on: 
- push: 
-  branches: 
-   - main
+  schedule:  # Fixed: proper 2-space indentation
+    - cron: "26 9 * * *"
+
 jobs:
- today_tasks: 
-  runs-on: ubuntu-latest
+  today_tasks: 
+    runs-on: ubuntu-latest
 
-  steps: 
-  - name: print good morning
-    run: echo "Good Morninng champion"
-
-  - name: show current time
-    run: |
-      echo "Current UTC time: $(date -u)"
-      echo "Current local time: $(date)"
+    steps: 
+    - name: print good morning
+      run: echo "Good Morning champion"  # Fixed: removed extra 'n'
+    
+    - name: show current time
+      run: |
+        echo "Current UTC time: $(date -u)"
+        echo "Current local time: $(date)"
+    
+    - name: motivational message
+      run: echo "Time to crush today's goals! 🚀"
