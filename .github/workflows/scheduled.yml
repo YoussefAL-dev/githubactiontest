@@ -2,7 +2,7 @@ name: scheduled_work_flow
 
 on: 
   schedule:  # Fixed: proper 2-space indentation
-    - cron: "5 * * * *"
+    - cron: "*/5 * * * *"
 
 jobs:
   today_tasks: 
